@@ -49,7 +49,6 @@ resource "aws_subnet" "private" {
   availability_zone = var.availability_zones[count.index]
 }
 
-
 resource "aws_route_table_association" "private" {
   count = length(var.private_subnet_cidr_blocks)
 
@@ -78,10 +77,7 @@ resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
 }
-
-
 # NAT resources: This will create 2 NAT gateways in 2 Public Subnets for 2 different Private Subnets.
-
 resource "aws_eip" "nat" {
   count = length(var.public_subnet_cidr_blocks)
   vpc   = true
@@ -89,7 +85,6 @@ resource "aws_eip" "nat" {
     Name        = "nat ip"
     Environment = var.environment_tag
   }
-
 }
 
 resource "aws_nat_gateway" "test" {
