@@ -13,4 +13,3 @@
 | List of public subnet CIDR blocks | public_subnet_cidr_blocks | 10.0.0.0/24, 10.0.2.0/24 | Yes |
 | List of public subnet CIDR blocks | public_subnet_cidr_blocks | 10.0.0.0/24, 10.0.2.0/24 | Yes |
 | List of availability zones | availability_zones | us-east-2a, us-east-2b, us-east-2c | yes |
-
